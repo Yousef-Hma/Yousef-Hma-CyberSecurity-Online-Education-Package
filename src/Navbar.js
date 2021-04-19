@@ -13,7 +13,7 @@ export default function Navbarr() {
             <Navbar.Collapse id="responsive-navbar-nav" style={{paddingLeft:"3.5%"}}>
                 <Nav className="mr-auto">
                 <NavDropdown title="Related Articles" id="collasible-nav-dropdown">
-                <NavDropdown.Item href={'Thesis'}>Author's Thesis</NavDropdown.Item>
+                <NavDropdown.Item href={'#'}>Author's Thesis</NavDropdown.Item>
                 <NavDropdown.Divider />
                         <NavDropdown.Item href="http://phrack.org/issues/49/14.html">Aleph One's Article</NavDropdown.Item>
                         <NavDropdown.Item href="http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html">x86 Assembly Guide</NavDropdown.Item>

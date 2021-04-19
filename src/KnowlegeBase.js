@@ -126,7 +126,6 @@ export default function CustomizedTreeView() {
                     <a href="https://securitycafe.ro/2015/12/14/introduction-to-windows-shellcode-development-part-2/"><StyledTreeItem nodeId="53" label="0x134: Windows Shellcode Development 2/3" /></a>
                     <a href="https://securitycafe.ro/2016/02/15/introduction-to-windows-shellcode-development-part-3/"><StyledTreeItem nodeId="54" label="0x135: Windows Shellcode Development 3/3" /></a>
                         </StyledTreeItem>
-                    
                 </StyledTreeItem>
                 <StyledTreeItem nodeId="100" label="0x200: Programs">
                     <StyledTreeItem nodeId="105" label="0x210: By Author">
