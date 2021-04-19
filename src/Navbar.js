@@ -1,0 +1,36 @@
+import React from 'react'
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import CV from './Attachments/CV.pdf'
+import Thesis from './Attachments/Thesis.pdf'
+import ReactDOM from 'react-dom'
+import {GiMagnifyingGlass} from 'react-icons/gi'
+
+export default function Navbarr() {
+    return (
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="/">CyberSecurity Educational Package</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav" style={{paddingLeft:"3.5%"}}>
+                <Nav className="mr-auto">
+                <NavDropdown title="Related Articles" id="collasible-nav-dropdown">
+                <NavDropdown.Item href={Thesis}>Author's Thesis</NavDropdown.Item>
+                <NavDropdown.Divider />
+                        <NavDropdown.Item href="http://phrack.org/issues/49/14.html">Aleph One's Article</NavDropdown.Item>
+                        <NavDropdown.Item href="http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html">x86 Assembly Guide</NavDropdown.Item>
+                        <NavDropdown.Item href="https://securitycafe.ro/2015/10/30/introduction-to-windows-shellcode-development-part1/">Shellcode Guide</NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Link href="/KnowledgeBase">Knowledge Base</Nav.Link>
+                    <Nav.Link href="/ShellcodeGenerator">Shellcode Generator</Nav.Link>
+                    <Nav.Link href="/CodeReviewer">Code Reviewer</Nav.Link>
+                    <NavDropdown title="About Author" id="collasible-nav-dropdown">
+                        <NavDropdown.Item href="https://www.linkedin.com/in/yousef-abdalla-390504184/">LinkedIn</NavDropdown.Item>
+                        <NavDropdown.Item href={CV}>Online Portfolio</NavDropdown.Item>
+                        <NavDropdown.Item href={CV}>CV-Résumé</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="mailto:yousef.hma@gmail.com">Contact Form</NavDropdown.Item>
+                    </NavDropdown>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    )
+}

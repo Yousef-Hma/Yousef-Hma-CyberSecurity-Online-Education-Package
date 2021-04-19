@@ -1,0 +1,17 @@
+
+//Required header files
+#include <stdio.h>
+#include <windows.h>
+
+int main()
+{
+    char* shellcode = " "; // Shellcode goes here
+
+    printf("shellcode length: %i", strlen(shellcode));  // Obtain shellcode length
+
+    int (*test)();                  // Test is a function pointer
+    test = (int (*)()) shellcode;   // Typecast shellcode as a function
+    (int)(*test)();                 // Execute shellcode as a function
+
+    return 0;
+}

