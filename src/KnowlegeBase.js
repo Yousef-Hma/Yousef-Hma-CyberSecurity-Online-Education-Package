@@ -110,7 +110,7 @@ export default function CustomizedTreeView() {
             >
                 <a href={README1}><StyledTreeItem nodeId="0" label="0x121: README" /></a>
                 <StyledTreeItem nodeId="1" label="0x100: Knowledge base">
-                    <a href={Thesis}><StyledTreeItem nodeId="2" label="0x110: Author's Thesis" /></a>
+                    <a href={'#'}><StyledTreeItem nodeId="2" label="0x110: Author's Thesis" /></a>
                     <StyledTreeItem nodeId="3" label="0x120: Basics of Assembly">
                         <StyledTreeItem nodeId="7" label="0x122: Assembly Syntax">
                         <a href={SyntaxATnT}><StyledTreeItem nodeId="11" label="0x1221: AT&T Syntax" /></a>
