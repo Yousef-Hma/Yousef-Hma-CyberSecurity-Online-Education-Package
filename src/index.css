@@ -371,7 +371,6 @@ h3 {
 .spoof {
   margin: 100px;
 }
-.video-react .video-react-big-play-button {
-  margin-left: 45%;
-  margin-top: 25%;
+.vplayer{
+  padding-top: 2%;
 }

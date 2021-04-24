@@ -26,16 +26,16 @@ import { VscFolder } from 'react-icons/vsc'
 import { VscFolderOpened } from 'react-icons/vsc'
 import ShellcodeExploit_MsgBox from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/MessageBoxA/ShellcodeExploit_MsgBox.txt'
 import Disas_MsgBox from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/MessageBoxA/Disassembly_MsgBox.txt'
-// import Demo_MsgBox from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/MessageBoxA/Demo_MsgBox.mp4'
+import Demo_MsgBox from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/MessageBoxA/Demo_MsgBox.mp4'
 import ShellcodeExploit_Swap from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/SwapMouseButton/ShellcodeExploit_Swap.txt'
 import Disas_Swap from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/SwapMouseButton/Disassembly_Swap.txt'
-// import Demo_Swap from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/SwapMouseButton/Demo_Swap.mp4'
+import Demo_Swap from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/SwapMouseButton/Demo_Swap.mp4'
 import ShellcodeExploit_Notepad from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Notepad.exe/ShellcodeExploit_Notepad.txt'
 import Disas_Notepad from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Notepad.exe/Disassembly_Notepad.txt'
-// import Demo_Notepad from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Notepad.exe/Demo_Notepad.mp4'
+import Demo_Notepad from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Notepad.exe/Demo_Notepad.mp4'
 import ShellcodeExploit_Calc from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Calc.exe/ShellcodeExploit_Calc.txt'
 import Disas_Calc from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Calc.exe/Disassembly_Calc.txt'
-// import Demo_Calc from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Calc.exe/Demo_Calc.mp4'
+import Demo_Calc from './Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Calc.exe/Demo_Calc.mp4'
 
 function MinusSquare(props) {
     return (
@@ -150,42 +150,42 @@ export default function CustomizedTreeView() {
                         <StyledTreeItem nodeId="212" label="0x321: MessageBoxA">
                             <a href={ShellcodeExploit_MsgBox}><StyledTreeItem nodeId="213" label="0x321: Shellcode Exploit" /></a>
                             <a href={Disas_MsgBox}><StyledTreeItem nodeId="214" label="0x321: Disassembly" /></a>
-                            <StyledTreeItem nodeId="215" label="0x321: Demo - MessageBoxA"><br /><div className="vplayer"><ReactPlayer
-                                url='videos/Demo_MsgBox.MP4'
+                            <StyledTreeItem nodeId="215" label="0x321: Demo - MessageBoxA"><div className="vplayer"><ReactPlayer
+                                url={Demo_MsgBox}
                                 width='100%'
                                 height='100%'
                                 controls={true}
-                            /><br /></div></StyledTreeItem>
+                            /></div><br/></StyledTreeItem>
                         </StyledTreeItem>
                         <StyledTreeItem nodeId="216" label="0x322: SwapMouseButton" >
                             <a href={ShellcodeExploit_Swap}><StyledTreeItem nodeId="217" label="0x321: Shellcode Exploit" /></a>
                             <a href={Disas_Swap}><StyledTreeItem nodeId="218" label="0x321: Dissassembly" /></a>
-                            <StyledTreeItem nodeId="219" label="0x321: Demo - SwapMouseButton"><br /><div className="vplayer"><ReactPlayer
-                                url='videos/Demo_Swap.MP4'
+                            <StyledTreeItem nodeId="219" label="0x321: Demo - SwapMouseButton"><div className="vplayer"><ReactPlayer
+                                url={Demo_Swap}
                                 width='100%'
                                 height='100%'
                                 controls={true}
-                            /><br /></div></StyledTreeItem>
+                            /></div><br/></StyledTreeItem>
                         </StyledTreeItem>
                         <StyledTreeItem nodeId="220" label="0x323: Calc.exe">
                             <a href={ShellcodeExploit_Calc}><StyledTreeItem nodeId="221" label="0x323: Shellcode Exploit" /></a>
                             <a href={Disas_Calc}><StyledTreeItem nodeId="222" label="0x323: Disassembly" /></a>
-                            <StyledTreeItem nodeId="223" label="0x323: Demo - Calc.exe"><br /><div className="vplayer"><ReactPlayer
-                                url='videos/Demo_Calc.MP4'
+                            <StyledTreeItem nodeId="223" label="0x323: Demo - Calc.exe"><div className="vplayer"><ReactPlayer
+                                url={Demo_Calc}
                                 width='100%'
                                 height='100%'
                                 controls={true}
-                            /><br /></div></StyledTreeItem>
+                            /></div><br/></StyledTreeItem>
                         </StyledTreeItem>
                         <StyledTreeItem nodeId="230" label="0x324: Notepad.exe">
                             <a href={ShellcodeExploit_Notepad}><StyledTreeItem nodeId="231" label="0x323: Shellcode Exploit" /></a>
                             <a href={Disas_Notepad}><StyledTreeItem nodeId="232" label="0x323: Disassembly" /></a>
-                            <StyledTreeItem nodeId="233" label="0x323: Demo - Notepad.exe"><br /><div className="vplayer"><ReactPlayer
-                                url='videos/Demo_Notepad.MP4'
+                            <StyledTreeItem nodeId="233" label="0x323: Demo - Notepad.exe"><div className="vplayer"><ReactPlayer
+                                url={Demo_Notepad}
                                 width='100%'
                                 height='100%'
                                 controls={true}
-                            /><br /></div></StyledTreeItem>
+                            /></div><br/></StyledTreeItem>
                         </StyledTreeItem>
                     </StyledTreeItem>
                     <StyledTreeItem nodeId="240" label="0x330: Return-Oriented Programming">
