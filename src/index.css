@@ -41,21 +41,6 @@
   color: #333;
 }
 
-/* blog previews / list */
-.blog-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
-}
-.blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-}
-.blog-preview h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 8px;
-}
-
 p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -70,27 +55,6 @@ h3 {
   font-size: 20px;
   border-bottom: 1px solid #eee;
   font-family: "Open Sans", sans-serif;
-}
-
-.blog-preview a {
-  text-decoration: none;
-}
-/* blog details page */
-.blog-details h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 10px;
-}
-.blog-details div {
-  margin: 20px 0;
-}
-.blog-details button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
 /* code reviewer */
@@ -225,6 +189,7 @@ h3 {
 }
 .container{
   border-radius: 2%;
+  min-width: 850px;
 }
 .home{
   padding-left: 2%;
@@ -255,7 +220,7 @@ h3 {
   font-size: 15pt;
 }
 .knowledgebase img{
-  width: 30vw;
+  width: 100%;
 }
 
 /* Shellcode Generator Stylesheet*/
@@ -373,4 +338,5 @@ h3 {
 }
 .vplayer{
   padding-top: 2%;
+
 }
