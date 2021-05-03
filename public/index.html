@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <link rel="icon" href="Lock.ico" />
     <link
-    rel="stylesheet"
-    href="https://video-react.github.io/assets/video-react.css"
+      rel="stylesheet"
+      href="https://video-react.github.io/assets/video-react.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -13,10 +13,10 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <meta 
-     name='viewport' 
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
-/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <link rel="apple-touch-icon" href="Lirten-Logos-Brands.png" />
     <!--
      manifest.json provides metadata used when your web app is installed on a
@@ -111,13 +111,25 @@
     ></script>
     <script src="./modernizr-custom.js"></script>
     <script>
-      Modernizr.on('webp', function(result) {
+      Modernizr.on("webp", function (result) {
         if (result) {
           // Has WebP support
         } else {
           // No WebP support
         }
       });
+    </script>
+    <script>
+      function zoomOutMobile() {
+        var viewport = document.querySelector('meta[name="viewport"]');
+
+        if (viewport) {
+          viewport.content = "initial-scale=0.1";
+          viewport.content = "width=1200";
+        }
+      }
+
+      zoomOutMobile();
     </script>
   </body>
 </html>
