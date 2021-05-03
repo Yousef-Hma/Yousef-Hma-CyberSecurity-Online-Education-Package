@@ -81,7 +81,6 @@ const handleSubmit = (e) => {
                     <option value="yoshi">yoshi</option>
                 </select> */}
                 <br/>
-                <p><br/></p>
             </form>
         </div>
     );
