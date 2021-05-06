@@ -2,8 +2,6 @@ import React from 'react'
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import CV from './Attachments/CV.pdf'
 import Thesis from './Attachments/Thesis.pdf'
-import ReactDOM from 'react-dom'
-import {GiMagnifyingGlass} from 'react-icons/gi'
 
 export default function Navbarr() {
     return (
