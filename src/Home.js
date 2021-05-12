@@ -1,5 +1,4 @@
 import Body from './Body';
-import useFetch from './useFetch';
 import gif from './Attachments/EDU_CS.gif';
 
 const Home = () => {
