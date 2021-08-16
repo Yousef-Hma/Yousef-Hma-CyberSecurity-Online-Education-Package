@@ -1,6 +1,6 @@
 import React from 'react'
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
-import CV from './Attachments/CV.pdf'
+import CV from './Attachments/Yousef_Hazem_CV.pdf'
 import Thesis from './Attachments/Thesis.pdf'
 
 export default function Navbarr() {
@@ -11,7 +11,7 @@ export default function Navbarr() {
             <Navbar.Collapse id="responsive-navbar-nav" style={{paddingLeft:"3.5%"}}>
                 <Nav className="mr-auto">
                 <NavDropdown title="Related Articles" id="collasible-nav-dropdown">
-                <NavDropdown.Item href={'#'} target="_blank">Author's Thesis</NavDropdown.Item>
+                <NavDropdown.Item href={Thesis} target="_blank">Author's Thesis</NavDropdown.Item>
                 <NavDropdown.Divider />
                         <NavDropdown.Item href="http://phrack.org/issues/49/14.html" target="_blank">Aleph One's Article</NavDropdown.Item>
                         <NavDropdown.Item href="http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html" target="_blank">x86 Assembly Guide</NavDropdown.Item>

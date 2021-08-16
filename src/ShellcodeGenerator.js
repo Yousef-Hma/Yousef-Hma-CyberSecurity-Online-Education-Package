@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { AiOutlineCopy } from 'react-icons/ai'
 import CreateProcessCalc from "./Attachments/KnowledgeBaseFiles/Exploits/Shellcode Exploits/Calc.exe/CreateProcessCalc.json"

@@ -196,6 +196,14 @@ h3 {
   padding-left: 2%;
   padding-right: 2%;
 }
+
+.home p{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333;
+}
+
 .white{
   color: #eee;
 }
@@ -341,3 +349,4 @@ h3 {
   padding-top: 2%;
 
 }
+

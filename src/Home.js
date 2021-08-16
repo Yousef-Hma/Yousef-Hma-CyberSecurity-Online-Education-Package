@@ -6,7 +6,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            <img src={gif} className="center" />
+            <img src={gif} className="center" alt="CS gif"/>
             {/* {<div style={{textAlign:'center'}}><br/> Loading... <br/><br/></div>} */}
             {<Body/>}
         </div>
