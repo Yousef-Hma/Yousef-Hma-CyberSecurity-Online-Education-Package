@@ -1,0 +1,42 @@
+
+There are three main types of operations often carried out by an ISA, these are - Data Handling and Memory Operations,
+Arithmetic and Logic Operations, and Control Flow Operations. Given below are a few examples of common instructions 
+performing these types of operation. The syntax of how these instructions are written and how a combination of them
+can be used in a meaningful way is demonstrated in the program file named "Example Inline Assembly" found in this folder.
+
+
+	Data Handling and Memory Operations:
+
+MOV - Move value from source operand to destination operand.
+LEA - Load the effective address of an operand into another.
+LODS - Load contents pointed to in memory into operand.
+PUSH - Push content of operand into stack (i.e. saving it)
+POP - Pop content saved in stack onto operand.
+
+
+	Arithmetic and Logic Operations:
+
+ADD - Add the specified operands
+SUB - Subtract the specified operands
+IMUL - Multiply the specified operands
+DEC - Decrement the specified operand
+INC - Increment the specified operand
+XOR - XOR bitwise operation - Effectively zeros operand
+AND - AND bitwise operation
+NOT - NOT bitwise operation - Effectively negates operand
+NOP - No operation (Often used in padding to create sleds)
+
+
+	Control Flow Operations:
+
+CALL - Call function
+RET - Return from function call
+JMP - Unconditional Jump
+CMP - Compares two operands
+JNE - Conditional Jump (if !=)
+JE - Contional Jump (if =)
+JZ - Conditional Jump (if = 0)
+
+
+
+
